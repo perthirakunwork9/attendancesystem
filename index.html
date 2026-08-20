@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>ระบบเช็คชื่อการทำงานพนักงาน & ไซต์งานก่อสร้าง</title>
+  
+  <!-- Thai Fonts (Prompt, Noto Sans Thai & Sarabun for Official Reports) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700;800&family=Sarabun:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- SheetJS for Excel Export -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  
+  <!-- Chart.js for Dashboard Charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  
+  <!-- Firebase SDKs for Multi-device Realtime Cloud Sync -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <link rel="stylesheet" href="css/style.css?v=2.3">
+</head>
+<body>
+
+  <!-- Toast Notification Wrapper -->
+  <div id="toast-wrap" class="toast-wrap" aria-live="polite"></div>
+
+  <!-- Modal Container -->
+  <div id="modal-root"></div>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeMobileDrawer()"></div>
+  <aside class="drawer" id="drawer"></aside>
+
+  <!-- Main Application Wrapper -->
+  <div id="app">
+    <!-- Desktop Sidebar -->
+    <aside class="sidebar" id="sidebar"></aside>
+
+    <!-- Main Content Area -->
+    <div class="main-wrapper">
+      <!-- Top Navigation Bar -->
+      <header class="topbar blueprint" id="topbar"></header>
+
+      <!-- Dynamic Page Content -->
+      <main class="content-container" id="content">
+        <div class="loading-state">
+          <div class="spinner"></div>
+          <p>กำลังเตรียมระบบเช็คชื่อคนงาน...</p>
+        </div>
+      </main>
+
+      <!-- Mobile Bottom Navigation Bar -->
+      <nav class="bottom-tabs" id="bottomTabs"></nav>
+    </div>
+  </div>
+
+  <!-- Dedicated Print Area for 100% Crisp Thai PDF Export -->
+  <div id="printable-report-area"></div>
+
+  <script src="js/app.js?v=2.3"></script>
+</body>
+</html>
